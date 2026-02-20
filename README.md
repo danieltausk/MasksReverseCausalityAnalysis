@@ -1,2 +1,8 @@
 # MasksReverseCausalityAnalysis
 R code, datasets and output files used for analysis of reverse causality problem regarding masks and mortality in 24 European countries (new preprint with B. Spira)
+
+Dataset files fulldataset.csv, masks20.parquet, masks21.parquet and owd.parquet should be stored in the parent directory of the code files ReadPrepareData.R, FindPhases.R, FindWaves.R, MaskData.R and AllRegressions.R. You should execute the file AllRegressions.R which will call the others (AllRegressions.R calls MaskData.R, which calls FindWaves.R, which calls FindPhases.R, which calls ReadPrepareData.R). Files dataperwave.csv, maskdata.csv, mask_begin_peak_wave.jpg, Phases.jpg, quotient_versus_mortality.jpg, quotient_versus_mortality2.jpg, MainRegressions.txt, MaskingComparisons.txt, OtherRegressions.txt, Phases.txt, VariousCorrelations.txt, Waves.pdf and WavesMarked.pdf are then generated as output by the code.
+
+Dataset files masks20.parquet, masks21.parquet and owd.parquet were downloaded from https://github.com/csthiago/reanalysis_mask and fulldataset.csv is the dataset file used in Tausk & Spira (2025).
+
+Graphs in Waves.pdf show daily Covid-19 mortality per million and mask usage in all 24 European countries considered (mask usage is multiplied by 10 to make the curve clearly visible). Waves are marked using transparent aquamarine rectangles. Graphs in WavesMarked.pdf are similar to those in Waves.pdf, but time periods used for the definition of index maskbeginwave (first decile of each wave) are marked using transparent yellow rectangles and time periods used for the definition of index maskpeakwave (decile of each wave following the day with maximum Covid-19 deaths) are marked using transparent orange rectangles.
