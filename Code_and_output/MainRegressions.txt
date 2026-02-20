@@ -1,0 +1,29 @@
+                           coefnames    stdcoef      CIleft    CIright        pval
+                            mask_all  0.5105387  0.22875716  0.7923203 0.001271052
+ people_fully_vaccinated_per_hundred -0.4860068 -0.75406153 -0.2179521 0.001628027
+             human_development_index -0.1569866 -0.49082823  0.1768550 0.391727947
+                            cardlife  0.2057748 -0.09265353  0.5042031 0.210281186
+
+                           coefnames    stdcoef     CIleft    CIright        pval
+                      mask_interwave  0.4406672  0.1617103  0.7196240 0.004863820
+ people_fully_vaccinated_per_hundred -0.4601171 -0.7363153 -0.1839189 0.003995275
+             human_development_index -0.2400725 -0.5816982  0.1015532 0.206505005
+                            cardlife  0.1732007 -0.1415384  0.4879398 0.316133623
+
+                           coefnames    stdcoef     CIleft    CIright        pval
+                         mask_inwave  0.5054183  0.2339393  0.7768973 0.001194922
+ people_fully_vaccinated_per_hundred -0.4577678 -0.7188723 -0.1966632 0.002234619
+             human_development_index -0.1699689 -0.4982716  0.1583339 0.346582002
+                            cardlife  0.1713801 -0.1210292  0.4637894 0.285399975
+
+                           coefnames    stdcoef     CIleft    CIright        pval
+                      mask_beginwave  0.5115299  0.2475346  0.7755251 0.001058772
+ people_fully_vaccinated_per_hundred -0.4262114 -0.6799915 -0.1724313 0.003264088
+             human_development_index -0.1744967 -0.4985288  0.1495354 0.327920763
+                            cardlife  0.1351324 -0.1513474  0.4216121 0.388509731
+
+                           coefnames    stdcoef      CIleft    CIright         pval
+                       mask_peakwave  0.5226904  0.28095648  0.7644243 0.0002449089
+ people_fully_vaccinated_per_hundred -0.3892168 -0.62430929 -0.1541243 0.0032982872
+             human_development_index -0.1815590 -0.47279208  0.1096742 0.2583898757
+                            cardlife  0.1908702 -0.08141547  0.4631559 0.2018009473

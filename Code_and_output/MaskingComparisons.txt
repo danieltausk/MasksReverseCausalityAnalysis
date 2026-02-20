@@ -1,0 +1,31 @@
+Paired Wilcoxon test, H1: maskpeakwave > maskbeginwave (one datapoint per wave):
+
+	Wilcoxon signed rank test with continuity correction
+
+data:  dataperwave$mask_peakwave and dataperwave$mask_beginwave
+V = 2410, p-value = 4.487e-11
+alternative hypothesis: true location shift is greater than 0
+
+
+maskpeakwave/maskbeginwave (one datapoint per wave):
+median:  1.52 
+first quartile:  1.19 
+third quartile:  2.12 
+minimum:  0.64 
+maximum:  24.03 
+
+Paired Wilcoxon test, H1: maskinwave > maskinterwave (one datapoint per country):
+
+	Wilcoxon signed rank exact test
+
+data:  maskdata$mask_inwave and maskdata$mask_interwave
+V = 300, p-value = 5.96e-08
+alternative hypothesis: true location shift is greater than 0
+
+
+maskinwave/maskinterwave (one datapoint per country):
+median:  1.94 
+first quartile:  1.59 
+third quartile:  2.23 
+minimum:  1.31 
+maximum:  6 

@@ -1,0 +1,105 @@
+Regressing maskpeakwave on maskbeginwave (one datapoint per wave):
+
+
+Call:
+lm(formula = mask_peakwave ~ mask_beginwave, data = dataperwave)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.28537 -0.09989 -0.00845  0.05907  0.38615 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     0.18905    0.02748    6.88 2.06e-09 ***
+mask_beginwave  0.86335    0.06272   13.77  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1388 on 70 degrees of freedom
+Multiple R-squared:  0.7303,	Adjusted R-squared:  0.7264 
+F-statistic: 189.5 on 1 and 70 DF,  p-value: < 2.2e-16
+
+
+                   2.5 %    97.5 %
+(Intercept)    0.1342461 0.2438490
+mask_beginwave 0.7382671 0.9884304
+
+Regressing maskinwave on maskinterwave (one datapoint per country):
+
+
+Call:
+lm(formula = mask_inwave ~ mask_interwave, data = maskdata)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.134736 -0.065412  0.008651  0.063231  0.117975 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     0.15147    0.03227   4.694 0.000111 ***
+mask_interwave  1.21654    0.10636  11.438 9.92e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07719 on 22 degrees of freedom
+Multiple R-squared:  0.8561,	Adjusted R-squared:  0.8495 
+F-statistic: 130.8 on 1 and 22 DF,  p-value: 9.924e-11
+
+
+                    2.5 %    97.5 %
+(Intercept)    0.08454387 0.2183886
+mask_interwave 0.99596812 1.4371030
+
+Regressing maskpeakwave on maskbeginwave and mean mortality (one datapoint per wave):
+
+
+Call:
+lm(formula = mask_peakwave ~ mask_beginwave + mean_death, data = dataperwave)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.28130 -0.10940 -0.00896  0.06605  0.39265 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    0.183507   0.030817   5.955 9.79e-08 ***
+mask_beginwave 0.856413   0.065357  13.104  < 2e-16 ***
+mean_death     0.002381   0.005855   0.407    0.685    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1396 on 69 degrees of freedom
+Multiple R-squared:  0.7309,	Adjusted R-squared:  0.7231 
+F-statistic: 93.71 on 2 and 69 DF,  p-value: < 2.2e-16
+
+
+      coefnames    stdcoef     CIleft   CIright         pval
+ mask_beginwave 0.84768590  0.7748954 0.9204764 2.142251e-20
+     mean_death 0.02631086 -0.1000871 0.1527088 6.854745e-01
+
+Regressing maskinwave on maskinterwave and total Covid deaths (one datapoint per country):
+
+
+Call:
+lm(formula = mask_inwave ~ mask_interwave + total_death, data = maskdata2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.13473 -0.05271  0.02182  0.05165  0.14939 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    1.177e-01  4.081e-02   2.883  0.00889 ** 
+mask_interwave 1.163e+00  1.122e-01  10.362 1.04e-09 ***
+total_death    2.378e-05  1.804e-05   1.318  0.20166    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.07593 on 21 degrees of freedom
+Multiple R-squared:  0.8671,	Adjusted R-squared:  0.8544 
+F-statistic: 68.48 on 2 and 21 DF,  p-value: 6.289e-10
+
+
+      coefnames   stdcoef     CIleft   CIright         pval
+ mask_interwave 0.8844915  0.7826063 0.9863768 1.035523e-09
+    total_death 0.1125124 -0.0572498 0.2822746 2.016622e-01

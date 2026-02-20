@@ -1,0 +1,20 @@
+maskbeginwave versus maskpeakwave (one datapoint per wave):
+pearson correlation:  0.85  95% CI: [ 0.8 , 0.93 ]
+
+maskpeakwave/maskbeginwave versus mean mortality (one datapoint per wave):
+spearman correlation:  -0.13  95% CI: [ -0.37 , 0.09 ]
+
+maskinwave/maskinterwave versus total Covid mortality (one datapoint per country):
+spearman correlation:  -0.25  95% CI: [ -0.81 , 0.17 ]
+
+pearson correlations between mask indices (one datapoint per country):
+mask_all  versus  mask_interwave :  0.95  95% CI: [ 0.92 , 1 ]
+mask_all  versus  mask_inwave :  0.99  95% CI: [ 0.99 , 1 ]
+mask_all  versus  mask_beginwave :  0.94  95% CI: [ 0.9 , 1 ]
+mask_all  versus  mask_peakwave :  0.94  95% CI: [ 0.91 , 1 ]
+mask_interwave  versus  mask_inwave :  0.93  95% CI: [ 0.89 , 1 ]
+mask_interwave  versus  mask_beginwave :  0.92  95% CI: [ 0.87 , 1 ]
+mask_interwave  versus  mask_peakwave :  0.86  95% CI: [ 0.79 , 0.98 ]
+mask_inwave  versus  mask_beginwave :  0.96  95% CI: [ 0.93 , 0.99 ]
+mask_inwave  versus  mask_peakwave :  0.96  95% CI: [ 0.94 , 1 ]
+mask_beginwave  versus  mask_peakwave :  0.92  95% CI: [ 0.87 , 0.98 ]
