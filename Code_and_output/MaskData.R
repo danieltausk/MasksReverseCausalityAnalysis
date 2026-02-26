@@ -51,10 +51,10 @@ ggsave(filename="mask_begin_peak_wave.jpg",device="jpeg",width=14.23,height=6.77
 
 dataperwave2 = mutate(dataperwave,quotient=mask_peakwave/mask_beginwave)
 
-# scatter plot of quotient maskpeakwave/maskbeginwave against mean Covid-19 mortality per million during the wave
+# scatter plot of quotient maskpeakwave/maskbeginwave against mean COVID-19 mortality per million during the wave
 # one point per wave
 ggplot(data=dataperwave2)+geom_point(aes(x=mean_death,y=quotient,col=factor(wave)))+
-	labs(x="mean Covid-19 deaths per million during wave",y="maskpeakwave/maskbeginwave")+
+	labs(x="mean COVID-19 deaths per million during wave",y="maskpeakwave/maskbeginwave")+
 	scale_y_continuous(lim=c(0,10),breaks=0:10)+
 	scale_color_manual(values=c("1"="black","2"="red","3"="blue"),labels=c("1"="first","2"="second","3"="third"),name="Wave",guide=guide_legend(order=1))+
 	geom_smooth(aes(x=mean_death,y=quotient,linetype="loess"),method="loess",se=FALSE,formula=y~x,col="orange")+
@@ -64,10 +64,10 @@ ggsave(filename="quotient_versus_mortality.jpg",device="jpeg",width=14.23,height
 maskdata2 = dataset |> group_by(location_name) |> summarize(total_death=sum(deathcovid)) |> left_join(maskdata,y=_,by="location_name")
 maskdata2 = mutate(maskdata2,quotient=mask_inwave/mask_interwave)
 
-# scatter plot of quotient maskinwave/maskinterwave against total Covid-19 mortality per million
+# scatter plot of quotient maskinwave/maskinterwave against total COVID-19 mortality per million
 # one point per country
 ggplot(data=maskdata2)+geom_point(aes(x=total_death,y=quotient))+
-	labs(x="total Covid-19 deaths per million",y="maskinwave/maskinterwave")+
+	labs(x="total COVID-19 deaths per million",y="maskinwave/maskinterwave")+
 	scale_y_continuous(breaks=0:7,lim=c(0,7))+
 	geom_smooth(aes(x=total_death,y=quotient,linetype="loess"),method="loess",se=FALSE,formula=y~x,col="orange")+
 	scale_linetype_manual(values="solid",name=NULL)
@@ -97,7 +97,7 @@ cat("spearman correlation: ",round(CI$est,2)," 95% CI: [",round(CI$left,2),",",r
 
 cat("\n")
 
-cat("maskinwave/maskinterwave versus total Covid mortality (one datapoint per country):\n")
+cat("maskinwave/maskinterwave versus total COVID-19 mortality (one datapoint per country):\n")
 CI = cor_bootstrap_CI(maskdata2$quotient,maskdata2$total_death,method="spearman")
 cat("spearman correlation: ",round(CI$est,2)," 95% CI: [",round(CI$left,2),",",round(CI$right,2),"]\n")
 
