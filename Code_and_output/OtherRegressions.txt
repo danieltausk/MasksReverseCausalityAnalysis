@@ -77,7 +77,7 @@ F-statistic: 93.71 on 2 and 69 DF,  p-value: < 2.2e-16
  mask_beginwave 0.84768590  0.7748954 0.9204764 2.142251e-20
      mean_death 0.02631086 -0.1000871 0.1527088 6.854745e-01
 
-Regressing maskinwave on maskinterwave and total Covid deaths (one datapoint per country):
+Regressing maskinwave on maskinterwave and total COVID-19 deaths (one datapoint per country):
 
 
 Call:
