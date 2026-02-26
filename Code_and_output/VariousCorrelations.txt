@@ -4,7 +4,7 @@ pearson correlation:  0.85  95% CI: [ 0.8 , 0.93 ]
 maskpeakwave/maskbeginwave versus mean mortality (one datapoint per wave):
 spearman correlation:  -0.13  95% CI: [ -0.37 , 0.09 ]
 
-maskinwave/maskinterwave versus total Covid mortality (one datapoint per country):
+maskinwave/maskinterwave versus total COVID-19 mortality (one datapoint per country):
 spearman correlation:  -0.25  95% CI: [ -0.81 , 0.17 ]
 
 pearson correlations between mask indices (one datapoint per country):
