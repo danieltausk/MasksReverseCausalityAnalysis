@@ -25,7 +25,7 @@ xaxis_lab = c(sapply(2:12,function(m) paste0("20/",sprintf("%02d",m))),sapply(1:
 
 ggplot(data=dataset2,aes(x=date,y=deathnorm,col=location_name))+geom_line()+
 	scale_x_continuous(breaks=xaxis_br,labels=xaxis_lab)+
-	labs(y="normalized Covid-19 deaths",col="Country")+
+	labs(y="normalized COVID-19 deaths",col="Country")+
 	geom_vline(xintercept=c(endphase1,endphase2))
 ggsave(filename="Phases.jpg",device="jpeg",width=14.23,height=6.77)
 
