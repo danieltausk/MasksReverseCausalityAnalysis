@@ -77,7 +77,7 @@ print(output_reg(reg),row.names=FALSE)
 
 cat("\n")
 
-cat("Regressing maskinwave on maskinterwave and total Covid deaths (one datapoint per country):\n\n")
+cat("Regressing maskinwave on maskinterwave and total COVID-19 deaths (one datapoint per country):\n\n")
 reg = lm(mask_inwave~mask_interwave+total_death,data=maskdata2)
 print(summary(reg))
 cat("\n")
