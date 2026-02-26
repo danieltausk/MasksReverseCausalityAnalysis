@@ -84,7 +84,7 @@ datasetwaves = data.frame(location_name=countries,beginwave1,endwave1,beginwave2
 datasetwaves = datasetwaves |> mutate(wave = ifelse(date >= beginwave1 & date <= endwave1,1,0)+
 		ifelse(date >= beginwave2 & date <= endwave2,2,0)+ifelse(date >= beginwave3 & date <= endwave3,3,0))
 
-# computes mean Covid-19 mortality per million for each wave
+# computes mean COVID-19 mortality per million for each wave
 dataperwave = datasetwaves |> group_by(location_name,wave) |> summarize(mean_death=mean(deathcovid),.groups="drop") |> left_join(dataperwave,y=_,by=c("location_name","wave"))
 
 
@@ -108,7 +108,7 @@ dataperwave$end_peak = end_peak
 if(TRUE) # you can replace "TRUE" with "FALSE" if you don't want to generate these graphs
 {
 
-# graphs (one per country) showing Covid-19 mortality per million, mask usage and waves annotated in aquamarine transparent rectangles
+# graphs (one per country) showing COVID-19 mortality per million, mask usage and waves annotated in aquamarine transparent rectangles
 
 pdf("Waves.pdf",width=14.23,height=6.77)
 for(i in 1:length(countries))
@@ -117,7 +117,7 @@ for(i in 1:length(countries))
 		geom_line(aes(x=date,y=deathcovid,col="deaths"))+
 		geom_line(aes(x=date,y=mask_use_mean*10,col="masks"))+
 		scale_x_continuous(breaks=xaxis_br,labels=xaxis_lab)+
-		scale_color_manual(values=c("deaths"="black","masks"="purple"),labels=c("deaths"="Covid-19 deaths per million","masks"="mask usage times 10"),name=NULL)+
+		scale_color_manual(values=c("deaths"="black","masks"="purple"),labels=c("deaths"="COVID-19 deaths per million","masks"="mask usage times 10"),name=NULL)+
 		labs(title=countries[i],y=NULL)+
 		annotate("rect",xmin=beginwave1[i],xmax=endwave1[i],ymin=-Inf,ymax=Inf,fill="aquamarine",alpha=0.3)+
 		annotate("rect",xmin=beginwave2[i],xmax=endwave2[i],ymin=-Inf,ymax=Inf,fill="aquamarine",alpha=0.3)+
@@ -146,7 +146,7 @@ for(i in 1:length(countries))
 		geom_line(aes(x=date,y=deathcovid,col="deaths"))+
 		geom_line(aes(x=date,y=mask_use_mean*10,col="masks"))+
 		scale_x_continuous(breaks=xaxis_br,labels=xaxis_lab)+
-		scale_color_manual(values=c("deaths"="black","masks"="purple"),labels=c("deaths"="Covid-19 deaths per million","masks"="mask usage times 10"),name=NULL)+
+		scale_color_manual(values=c("deaths"="black","masks"="purple"),labels=c("deaths"="COVID-19 deaths per million","masks"="mask usage times 10"),name=NULL)+
 		labs(title=countries[i],y=NULL)+
 		annotate("rect",xmin=beginwave1[i],xmax=endwave1[i],ymin=-Inf,ymax=Inf,fill="aquamarine",alpha=0.3)+
 		annotate("rect",xmin=beginwave2[i],xmax=endwave2[i],ymin=-Inf,ymax=Inf,fill="aquamarine",alpha=0.3)+
